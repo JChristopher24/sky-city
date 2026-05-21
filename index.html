@@ -4,10 +4,34 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>sky-city</title>
+    <link href="/src/style.css" rel="stylesheet">
+    <title>Sky City</title>
   </head>
-  <body>
-    <div id="app"></div>
+  <body class="flex flex-col h-screen">
+    <header class="bg-sky-500 text-white italic text-5xl text-center p-2">
+      <h1>Sky City</h1>
+    </header>
+
+    <main class="flex flex-1">
+      <div class="bg-gray-500 flex-1">
+        <!-- clicker area -->
+        <button id="clicker" class="w-full h-full text-3xl">
+          <p id="scoreDisplay">Score</p>
+          <img src="src/assets/sky.png" alt="Sky City" class="w-1/2 mx-auto">
+        </button>
+      </div>
+
+      <div class="bg-green-500 flex-1">
+        <!-- upgrade area -->
+        
+      </div>
+
+      <div class="bg-indigo-500 flex-1">
+        <!-- store area -->
+      
+      </div>
+    </main>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
