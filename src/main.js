@@ -6,5 +6,5 @@ let scoreDisplay = document.getElementById('scoreDisplay');
 
 clicker.addEventListener('click', function () {
     score++
-    scoreDisplay.innerText = score
+    scoreDisplay.innerText = score + "$"
 } )
