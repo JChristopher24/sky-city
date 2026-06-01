@@ -4,13 +4,19 @@ let clicker = document.getElementById('clicker');
 
 let scoreDisplay = document.getElementById('scoreDisplay');
 
+const formatter = new Intl.NumberFormat('en-US', {
+    maximumFractionDigits: 2,
+    notation: 'compact',
+    compactDisplay: 'short'
+})
+
 function updateScore(amount) {
     score += amount
-    scoreDisplay.innerText = score.toFixed(0) + "$"
+    scoreDisplay.innerText = "$" + formatter.format(score)
 }
 
 clicker.addEventListener('click', function () {
-    let clickAmt = 1 + (counstructionSpeed ** 1.05) + (constructionCost ** 1.25)
+    let clickAmt = 1 + (counstructionSpeed ** 1.05) + (constructionCost ** 20.05)
     updateScore(clickAmt)
 } )
 
@@ -19,7 +25,7 @@ let upgradeOneCount = document.getElementById('upgradeOneCount');
 let counstructionSpeed = 0
 
 upgradeOne.addEventListener('click', function () {
-    alert("Clicked on Upgrade One")
+    
 })
 
 upgradeOne.addEventListener('click', function () {
@@ -37,7 +43,7 @@ let upgradeTwoCount = document.getElementById('upgradeTwoCount');
 let constructionCost = 0
 
 upgradeTwo.addEventListener('click', function () {
-    alert("Clicked on Upgrade Two")
+    
 })
 
 upgradeTwo.addEventListener('click', function () {
@@ -49,3 +55,10 @@ upgradeTwo.addEventListener('click', function () {
         alert("Get Your Money Up")
     }
 })
+
+function gameLoop() {
+    let clickAmt = 1 + (counstructionSpeed ** 1.05) + (constructionCost ** 20.05)
+    updateScore(clickAmt)
+}
+
+setInterval(gameLoop, 0.1)
