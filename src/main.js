@@ -77,4 +77,4 @@ function gameLoop() {
     updateScore(clickAmt)
 }
 
-setInterval(gameLoop, 10)
+setInterval(gameLoop, 100)
